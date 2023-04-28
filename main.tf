@@ -2,10 +2,18 @@ terraform {
   required_providers {
     tfe = {
       version = "~> 0.44.0"
-      organization = "AWS_prk"
+    }
+  }
+
+cloud {
+    organization = "AWS_prk"
+
+    workspaces {
+      name = "Conf-2"
     }
   }
 }
+
 
 variable "AWS_ACCESS_KEY" {
   description = "aws access key"
